@@ -151,7 +151,6 @@ echo -e "\e[1m\e[32mRegistration site \e[0m"
 echo -e "\e[1m\e[39m    https://community.aptoslabs.com/ \n \e[0m"
 
 echo -e "\e[1m\e[32mRegistration parameter \e[0m"
-# echo -e "\e[1m\e[39m   $(cat $HOME/aptos-node/testnet/$USERNAME.yaml) \n \e[0m"
-echo -e "\e[1m\e[39m   $(cat $HOME/aptos-node/testnet/qyeah-test-01.yaml) \n \e[0m"
+echo -e "\e[1m\e[39m   $(cat $HOME/aptos-node/testnet/$USERNAME.yaml) \n \e[0m"
 
 echo "=================================================="
