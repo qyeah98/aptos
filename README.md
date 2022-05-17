@@ -13,7 +13,7 @@
 - Option1 : Cloud Shell  
 Recommend for Beginner
 
-- Option2 : Client
+- Option2 : Client  
 Install pre-requisites if needed:
 
    * Terraform 1.1.7: https://www.terraform.io/downloads.html
@@ -50,8 +50,40 @@ INPUT Workspace Name:  testnet
 wget -O aptos-validator-gke.sh https://raw.githubusercontent.com/qyeah98/aptos/main/validator/aptos-validator-gke.sh && chmod +x aptos-validator-gke.sh && ./aptos-validator-gke.sh
 ```
 
+and then input your node info prepared at 1-2. Configuration
+
+```bash
+Ex.
+INPUT Validator Name:  aptosbot
+INPUT Username      :  qyeah
+INPUT Project ID    :  aptos
+INPUT Region        :  us-central1
+INPUT Zone          :  c
+INPUT Bucket Name   :  qyeah-aptos-terraform-dev
+INPUT Workspace Name:  testnet
+```
+
+Finally, Validator node info will be displayed.
+
+```bash
+Ex.
+account_address: 69f9***************************************************64ade
+consensus_key: "0x87***************************************************9059"
+account_key: "0x87***************************************************beb2"
+validator_network_key: "0x76***************************************************af2f"
+validator_host:
+  host: 35.187.222.22
+  port: 6180
+full_node_network_key: "0xb2***************************************************7856"
+full_node_host:
+  host: 35.221.79.15
+  port: 6182
+stake_amount: 1
+```
+
+
 ## 1-4. Reference
-Aptos developer tutorial  
+* Aptos developer tutorial  
 https://aptos.dev/tutorials/validator-node/connect-to-testnet/
 
 
@@ -108,8 +140,27 @@ INPUT Your IP/DNS : 13.114.220.201
 INPUT Username: aptos-testnet-qyeah
 ```
 
+Finally, Validator node info will be displayed.
+
+```bash
+Ex.
+account_address: 69f9***************************************************64ade
+consensus_key: "0x87***************************************************9059"
+account_key: "0x87***************************************************beb2"
+validator_network_key: "0x76***************************************************af2f"
+validator_host:
+  host: 35.187.222.22
+  port: 6180
+full_node_network_key: "0xb2***************************************************7856"
+full_node_host:
+  host: 35.187.222.22
+  port: 6182
+stake_amount: 1
+```
+
 To check your node is fine, you should use these node monitor.  
-https://www.nodex.run/
+https://node.aptos.zvalid.com/  
+https://www.nodex.run/  
   
 
 # 3. Registor your node
