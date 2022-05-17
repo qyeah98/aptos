@@ -54,15 +54,15 @@ gcloud config set project $PROJECT_ID
 
 if ! command --version cargo &> /dev/null
 then
-    sudo apt-get update
-    sudo curl https://sh.rustup.rs -sSf | sh
+    apt-get update
+    curl https://sh.rustup.rs -sSf | sh
     source $HOME/.cargo/env
 fi
 
 if ! command aptos help &> /dev/null
 then
-    sudo apt install clang
-    sudo cargo install --git https://github.com/aptos-labs/aptos-core.git aptos --tag aptos-cli-latest
+    apt install clang
+    cargo install --git https://github.com/aptos-labs/aptos-core.git aptos --tag aptos-cli-latest
 fi
 
 echo "=================================================="
