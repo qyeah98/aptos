@@ -58,8 +58,9 @@ then
     then
         sudo apt-get update
         sudo curl https://sh.rustup.rs -sSf | sh
-        source $HOME/.cargo/env
+        source $HOME/.cargo/envsleep 1
     fi
+    sleep 1
     sudo apt install clang
     sudo cargo install --git https://github.com/aptos-labs/aptos-core.git aptos --tag aptos-cli-latest
 fi
@@ -92,13 +93,13 @@ terraform {
 
 module "aptos-node" {
   source        = "github.com/aptos-labs/aptos-core.git//terraform/aptos-node/gcp?ref=testnet"
-  region        = $REGION
-  zone          = $ZONE
-  project       = $PROJECT_ID
+  region        = "$REGION"
+  zone          = "$ZONE"
+  project       = "$PROJECT_ID"
   era           = 1
   chain_id      = 23
   image_tag     = "testnet"
-  validator_name = $VALIDATOR_NAME
+  validator_name = "$VALIDATOR_NAME"
 }
 EOF
 
