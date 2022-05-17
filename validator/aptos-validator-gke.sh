@@ -75,7 +75,7 @@ mkdir -p ~/$WORKSPACE
 
 echo -e "\e[1m\e[32m2.2 Creating Google Cloud Storage... \e[0m" && sleep 1
 
-gsutil mb gs://BUCKET
+gsutil mb gs://$BUCKET
 
 echo -e "\e[1m\e[32m2.2 Creating Terafform main.tf... \e[0m" && sleep 1
 
