@@ -10,7 +10,7 @@
 4. Add "Service Account Admin" role
 5. Prepare Execution environment.
 
-- Option1 : Cloud Shell
+- Option1 : Cloud Shell  
 Recommend for Beginner
 
 - Option2 : Client
@@ -22,7 +22,7 @@ Install pre-requisites if needed:
 
 
 ## 1-2. Configuration
-Need these parameter to deploy.
+Need these parameter to deploy.  
 Please prepare.
 ```
 INPUT Validator Name:  # Name of Your Validator, no space, e.g. aptosbot
@@ -51,41 +51,42 @@ wget -O aptos-validator-gke.sh https://raw.githubusercontent.com/qyeah98/aptos/m
 ```
 
 ## 1-4. Reference
-Aptos developer tutorial
+Aptos developer tutorial  
 https://aptos.dev/tutorials/validator-node/connect-to-testnet/
 
 
 # 2. Run Validator Using Docker
-
+  
 ## 2-1. Requirements
-Refering to formal aptos site.
-https://aptos.dev/tutorials/validator-node/intro
+Refering to formal aptos site.  
+https://aptos.dev/tutorials/validator-node/intro  
 
 
 ### 2-1-1. Hardware requirements
+  
+For running an aptos node on incentivized testnet we recommend the following:  
 
-For running an aptos node on incentivized testnet we recommend the following:
+* CPU: 4 cores (Intel Xeon Skylake or newer)
+* Memory: 8GiB RAM
+  
 
-CPU: 4 cores (Intel Xeon Skylake or newer).
-Memory: 8GiB RAM.
+### 2-1-2. Storage requirements  
+The amount of data stored by Aptos depends on the ledger history (length) of the blockchain and the number of on-chain states (e.g., accounts).  
+These values depend on several factors, including: the age of the blockchain, the average transaction rate and the configuration of the ledger pruner.  
 
-
-### 2-1-2. Storage requirements
-The amount of data stored by Aptos depends on the ledger history (length) of the blockchain and the number of on-chain states (e.g., accounts). These values depend on several factors, including: the age of the blockchain, the average transaction rate and the configuration of the ledger pruner.
-
-We recommend nodes have at least 300GB of disk space to ensure adequate storage space for load testing. You have the option to start with a smaller size and adjust based upon demands. You will be responsible for monitoring your node's disk usage and adjusting appropriately to ensure node uptime.
-
-
+We recommend nodes have at least 300GB of disk space to ensure adequate storage space for load testing.  
+You have the option to start with a smaller size and adjust based upon demands.  
+You will be responsible for monitoring your node's disk usage and adjusting appropriately to ensure node uptime.  
+  
 ### 2-1-3. Networking configuration requirements
-For Validator node:
+For Validator node:  
+* Open TCP port 6180, for validators to talk to each other.
+* Open TCP port 9101, for getting validator metrics to validate the health stats. (only needed during registration stage)
 
-Open TCP port 6180, for validators to talk to each other.
-Open TCP port 9101, for getting validator metrics to validate the health stats. (only needed during registration stage)
 For Fullnode:
-
-Open TCP port 6182, for fullnodes to talk to each other.
-Open TCP port 9101, for getting fullnode metrics to validate the health stats. (only needed during registration stage)
-Open TCP port 80/8080, for REST API access.
+* Open TCP port 6182, for fullnodes to talk to each other.
+* Open TCP port 9101, for getting fullnode metrics to validate the health stats. (only needed during registration stage)
+* Open TCP port 80/8080, for REST API access.
 
 
 ## 2-2. Installation using docker
@@ -107,13 +108,13 @@ INPUT Your IP/DNS : 13.114.220.201
 INPUT Username: aptos-testnet-qyeah
 ```
 
-To check your node is fine, you should use these node monitor.
+To check your node is fine, you should use these node monitor.  
 https://www.nodex.run/
-
+  
 
 # 3. Registor your node
-https://community.aptoslabs.com/
+https://community.aptoslabs.com/  
 
-Reference
+[Reference]  
 https://medium.com/aptoslabs/launch-of-aptos-incentivized-testnet-registration-2e85696a62d0
 
