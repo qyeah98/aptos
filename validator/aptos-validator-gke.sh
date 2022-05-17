@@ -52,15 +52,15 @@ echo -e "\e[1m\e[32m1. Updating list of dependencies... \e[0m" && sleep 1
 
 gcloud config set project $PROJECT_ID
 
+if ! command --version cargo &> /dev/null
+then
+    sudo apt-get update
+    sudo curl https://sh.rustup.rs -sSf | sh
+    source $HOME/.cargo/env
+fi
+
 if ! command aptos help &> /dev/null
 then
-    if ! command --version cargo &> /dev/null
-    then
-        sudo apt-get update
-        sudo curl https://sh.rustup.rs -sSf | sh
-        source $HOME/.cargo/envsleep 1
-    fi
-    sleep 1
     sudo apt install clang
     sudo cargo install --git https://github.com/aptos-labs/aptos-core.git aptos --tag aptos-cli-latest
 fi
