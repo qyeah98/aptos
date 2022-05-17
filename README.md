@@ -4,10 +4,13 @@
 
 ## 1-1. Preparation
 
-1. Create Google Cloud Platform account
-2. Create a new project for deploying Aptos node
-3. Enable "Compute Engine API" and "Kubernetes Engine API"
-4. Add "Service Account Admin" role
+1. Create Google Cloud Platform account (https://cloud.google.com/free)
+2. Create a new project for deploying Aptos node  
+   Manage resources > CREATE PROJECT
+3. Enable "Compute Engine API" and "Kubernetes Engine API"  
+   APIs & Services > Enabled APIs & services > Library > Search "Compute Engine API" and "Kubernetes Engine API" > ENABLE
+4. Add "Service Account Admin" role  
+   IAM & Admin > Service Account > PERMISSION > GRANT ACCESS > Add "Service Account Admin" Role
 5. Prepare Execution environment.
 
 - Option1 : Cloud Shell  
