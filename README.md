@@ -57,13 +57,30 @@ and then input your node info prepared at 1-2. Configuration
 
 ```bash
 Ex.
-INPUT Validator Name:  aptosbot
-INPUT Username      :  qyeah
-INPUT Project ID    :  aptos
-INPUT Region        :  us-central1
-INPUT Zone          :  c
-INPUT Bucket Name   :  qyeah-aptos-terraform-dev
-INPUT Workspace Name:  testnet
+
+==================================================
+1. Set Validator Parameter 
+1.1 Set Validator Name 
+INPUT Validator Name: aptosbot
+==================================================
+1.2 Set USERNAME 
+INPUT Username: qyeah
+==================================================
+1.3 Set Project ID 
+INPUT Project ID: aptos-03821021
+==================================================
+1.4 Set Google Cloud Region 
+INPUT Region: us-central1
+==================================================
+1.5 Set Google Cloud Zone 
+INPUT Zone: c
+==================================================
+1.6 Set Google Cloud Storage 
+INPUT Bucket Name: qyeah-aptos-terraform-dev
+==================================================
+1.7 Set Workspace Name 
+INPUT Workspace Name: testnet
+==================================================
 ```
 
 Finally, Validator node info will be displayed.
@@ -75,11 +92,11 @@ consensus_key: "0x87***************************************************9059"
 account_key: "0x87***************************************************beb2"
 validator_network_key: "0x76***************************************************af2f"
 validator_host:
-  host: 35.187.222.22
+  host: 35.187.***.***
   port: 6180
 full_node_network_key: "0xb2***************************************************7856"
 full_node_host:
-  host: 35.221.79.15
+  host: 35.221.***.***
   port: 6182
 stake_amount: 1
 ```
