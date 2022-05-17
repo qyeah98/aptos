@@ -7,6 +7,7 @@
 1. Create Google Cloud Platform account (https://cloud.google.com/free)
 2. Create a new project for deploying Aptos node  
    Manage resources > CREATE PROJECT
+   Copy your project ID
 3. Enable "Compute Engine API" and "Kubernetes Engine API"  
    APIs & Services > Enabled APIs & services > Library > Search "Compute Engine API" and "Kubernetes Engine API" > ENABLE
 4. Add "Service Account Admin" role  
@@ -18,7 +19,7 @@ Recommend for Beginner
 
 - Option2 : Client  
 Install pre-requisites if needed:
-
+   * Aptos CLI: https://github.com/aptos-labs/aptos-core/blob/main/crates/aptos/README.md
    * Terraform 1.1.7: https://www.terraform.io/downloads.html
    * Kubernetes CLI: https://kubernetes.io/docs/tasks/tools/
    * Google Cloud CLI: https://cloud.google.com/sdk/docs/install-sdk
@@ -30,7 +31,7 @@ Please prepare.
 ```
 INPUT Validator Name:  # Name of Your Validator, no space, e.g. aptosbot
 INPUT Username      :  # Select a username for your node
-INPUT Project ID    :  # Specify your GCP project ID
+INPUT Project ID    :  # Specify your GCP project ID, NOT Name
 INPUT Region        :  # Specify the region
 INPUT Zone          :  # Specify the zone
 INPUT Bucket Name   :  # bucket name
@@ -41,7 +42,7 @@ Example
 ```
 INPUT Validator Name:  aptosbot
 INPUT Username      :  qyeah
-INPUT Project ID    :  aptos
+INPUT Project ID    :  aptos-03821021
 INPUT Region        :  us-central1
 INPUT Zone          :  c
 INPUT Bucket Name   :  qyeah-aptos-terraform-dev
@@ -53,7 +54,7 @@ INPUT Workspace Name:  testnet
 wget -O aptos-validator-gke.sh https://raw.githubusercontent.com/qyeah98/aptos/main/validator/aptos-validator-gke.sh && chmod +x aptos-validator-gke.sh && ./aptos-validator-gke.sh
 ```
 
-and then input your node info prepared at 1-2. Configuration
+and then input your node info
 
 ```bash
 Ex.
