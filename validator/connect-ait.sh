@@ -16,26 +16,6 @@ sleep 1
 
 echo -e "\e[1m\e[32m1. Set Aptos validator info \e[0m" && sleep 1
 
-echo -e "\e[1m\e[32m1.1 Set genesis.blob URL \e[0m" && sleep 1
-while :
-do
-  read -p "INPUT URL: " GENESISURL
-  if [ -n "$GENESISURL" ]; then
-    break
-  fi
-done
-
-echo "=================================================="
-
-echo -e "\e[1m\e[32m1.2 Set waypoint.txt URL \e[0m" && sleep 1
-while :
-do
-  read -p "INPUT URL: " WAYPOINTURL
-  if [ -n "$WAYPOINTURL" ]; then
-    break
-  fi
-done
-
 echo "=================================================="
 
 echo -e "\e[1m\e[32m2. Stopping your node and removing the data volumes ... \e[0m" && sleep 1
@@ -46,8 +26,8 @@ docker compose down --volumes
 echo "=================================================="
 
 echo -e "\e[1m\e[32m3. Downloading Aptos Validator config files ... \e[0m" && sleep 1
-wget -P ~/aptos-node/testnet $GENESISURL
-wget -P ~/aptos-node/testnet $WAYPOINTURL
+wget -O ~/aptos-node/testnet/genesis.blob https://raw.githubusercontent.com/aptos-labs/aptos-ait1/main/genesis.blob
+wget -O ~/aptos-node/testnet/waypoint.txt https://raw.githubusercontent.com/aptos-labs/aptos-ait1/main/waypoint.txt
 
 docker compose pull
 
