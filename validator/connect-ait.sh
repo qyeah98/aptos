@@ -15,19 +15,27 @@ echo "=================================================="
 sleep 1
 
 echo -e "\e[1m\e[32m1. Set Aptos validator info \e[0m" && sleep 1
+echo -e "\e[1m\e[32m1.1 Set your workspace \e[0m" && sleep 1
+while :
+do
+  read -p "INPUT WORKSPACE: " WORKSPACE
+  if [ -n "$WORKSPACE" ]; then
+    break
+  fi
+done
 
 echo "=================================================="
 
 echo -e "\e[1m\e[32m2. Stopping your node and removing the data volumes ... \e[0m" && sleep 1
 
-cd ~/aptos-node/testnet
+cd ~./$WORKSPACE
 docker compose down --volumes
 
 echo "=================================================="
 
 echo -e "\e[1m\e[32m3. Downloading Aptos Validator config files ... \e[0m" && sleep 1
-wget -O ~/aptos-node/testnet/genesis.blob https://raw.githubusercontent.com/aptos-labs/aptos-ait1/main/genesis.blob
-wget -O ~/aptos-node/testnet/waypoint.txt https://raw.githubusercontent.com/aptos-labs/aptos-ait1/main/waypoint.txt
+wget -O ~/$WORKSPACE/genesis.blob https://raw.githubusercontent.com/aptos-labs/aptos-ait1/main/genesis.blob
+wget -O ~/$WORKSPACE/waypoint.txt https://raw.githubusercontent.com/aptos-labs/aptos-ait1/main/waypoint.txt
 
 docker compose pull
 
