@@ -49,6 +49,8 @@ echo -e "\e[1m\e[32m3. Downloading Aptos Validator config files ... \e[0m" && sl
 wget -P ~/aptos-node/testnet $GENESISURL
 wget -P ~/aptos-node/testnet $WAYPOINTURL
 
+docker compose pull
+
 echo "=================================================="
 
 echo -e "\e[1m\e[32m4. Starting Aptos Validator ... \e[0m" && sleep 1
