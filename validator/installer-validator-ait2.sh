@@ -81,10 +81,10 @@ echo "=================================================="
 echo -e "\e[1m\e[32m7. Setting Validator ... \e[0m" && sleep 1
 
 echo -e "\e[1m\e[32m7.1 Generating Keys... \e[0m" && sleep 1
-aptos genesis generate-keys --output-dir ~/$testnet
+aptos genesis generate-keys --output-dir ~/testnet
 
 aptos genesis set-validator-configuration \
-    --keys-dir ~/$WORKSPACE --local-repository-dir ~/$WORKSPACE \
+    --keys-dir ~/$WORKSPACE --local-repository-dir ~/testnet \
     --username $USERNAME \
     --validator-host $ADDRESS:6180
 
