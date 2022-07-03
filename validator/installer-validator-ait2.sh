@@ -16,7 +16,7 @@ sleep 2
 
 echo -e "\e[1m\e[32m1. Set your info \e[0m" && sleep 1
 
-ADDRESS=$(curl inet-ip.info &> /dev/null)
+ADDRESS=$(curl inet-ip.info)
 
 echo -e "\e[1m\e[32mSet your username \e[0m" && sleep 1
 read -p "INPUT Username: " USERNAME
